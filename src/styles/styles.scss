@@ -1,4 +1,5 @@
 @use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tagesschrift&display=swap');
 
 
 @mixin flex-column{
@@ -8,22 +9,12 @@
 }
 
 // colours
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$background-color: #ecf0f1;
+$primary-color: white;
+$secondary-color: black;
 
-
-button{
-    background-color: $primary-color;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: color.adjust($primary-color, $lightness: -10%);
-    }
+body{
+    font-family: "Open Sans",sans-serif;
+    font-size: 2em;
 }
 
 .content {
@@ -31,24 +22,71 @@ button{
     justify-content: center;
     height: 100vh;
     background-color: $primary-color;
+
 }
 
-.dropdown-container{
+.dropdown-container {
     @include flex-column;
     justify-content: center;
-    // width: 10s0%;
-    background-color: $secondary-color;
+    background-color:color.adjust($primary-color, $lightness: -50%);
     padding: 20px;
-    border-radius: 5px;
+}
+
+.dropdown{
+    width: 300px;
+    position: relative;
+}
+
+button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: color.adjust($primary-color, $lightness: -10%);
+    }
+    &:active {
+        background-color: color.adjust($primary-color, $lightness: -30%);
+        text-decoration: underline;
+    }
 }
 
 .dropdown-content{
     @include flex-column;
     justify-content: center;
-    width: 100%;
-    background-color: $background-color;
+    background-color: $primary-color;
+    position: absolute;
+    align-items: flex-start;
+    width:100%;
+    a {
+        font-size: 1.2rem;
+        width: 100%;
+        text-decoration: none;
+        color: $secondary-color;
+        padding: 10px 20px;
+        &:hover {
+            color: color.adjust($secondary-color, $lightness: -10%);
+            background-color: color.adjust($primary-color, $lightness: -20%);
+        }
+        &:active {
+            color: color.adjust($secondary-color, $lightness: -10%);
+            background-color: color.adjust($primary-color, $lightness: -20%);
+            text-decoration: underline;   
+        }
+    }
 }
 
+.active{
+    background-color: rgb(213, 213, 255);
+}
+
+.translucent{
+    opacity:.5;
+}
 
 
 .hidden{
