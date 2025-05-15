@@ -1,8 +1,8 @@
 //import styles
-import "./styles/reset.css";
-import "./styles/styles.scss";
+import './styles/reset.css';
+import './styles/styles.scss';
 
-console.log("Hello World!");
+console.log('Hello World!');
 
 // Select elements
 const dropdownBtn = document.querySelector('.dropbtn');
