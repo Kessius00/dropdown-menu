@@ -21,23 +21,18 @@ body{
     @include flex-column;
     justify-content: center;
     height: 100vh;
-    background-color: $primary-color;
-
+    background-color: blueviolet;
 }
 
-.dropdown-container {
-    @include flex-column;
-    justify-content: center;
-    background-color:color.adjust($primary-color, $lightness: -50%);
-    padding: 20px;
-}
-
-.dropdown{
-    width: 300px;
+.dropdown {
     position: relative;
+    @include flex-column;
+    justify-content: flex-start;
+    background-color: $primary-color;
+    width: 200px;
 }
 
-button {
+.dropbtn {
     background-color: $primary-color;
     color: $secondary-color;
     border: none;
@@ -57,11 +52,15 @@ button {
 
 .dropdown-content{
     @include flex-column;
-    justify-content: center;
-    background-color: $primary-color;
     position: absolute;
+    top: 100%;
+    justify-content: center;
     align-items: flex-start;
+
+    background-color: $primary-color;
+    margin-top: auto;
     width:100%;
+
     a {
         font-size: 1.2rem;
         width: 100%;
@@ -80,15 +79,15 @@ button {
     }
 }
 
-.active{
+.dd-active{
     background-color: rgb(213, 213, 255);
 }
 
-.translucent{
+.dd-translucent{
     opacity:.5;
 }
 
 
-.hidden{
+.dd-hidden{
     display: none;
 }
